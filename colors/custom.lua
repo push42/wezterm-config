@@ -1,94 +1,105 @@
--- A slightly altered version of catppucchin mocha
+-- Midnight glass palette engineered for a premium neon aesthetic.
 -- stylua: ignore
-local mocha = {
-   rosewater = '#f5e0dc',
-   flamingo  = '#f2cdcd',
-   pink      = '#f5c2e7',
-   mauve     = '#cba6f7',
-   red       = '#f38ba8',
-   maroon    = '#eba0ac',
-   peach     = '#fab387',
-   yellow    = '#f9e2af',
-   green     = '#a6e3a1',
-   teal      = '#94e2d5',
-   sky       = '#89dceb',
-   sapphire  = '#74c7ec',
-   blue      = '#89b4fa',
-   lavender  = '#b4befe',
-   text      = '#cdd6f4',
-   subtext1  = '#bac2de',
-   subtext0  = '#a6adc8',
-   overlay2  = '#9399b2',
-   overlay1  = '#7f849c',
-   overlay0  = '#6c7086',
-   surface2  = '#585b70',
-   surface1  = '#45475a',
-   surface0  = '#313244',
-   base      = '#1f1f28',
-   mantle    = '#181825',
-   crust     = '#11111b',
+local aurora = {
+   base          = '#0b111a',
+   mantle        = '#101927',
+   crust         = '#090d15',
+   surface0      = '#172031',
+   surface1      = '#1f2a3f',
+   surface2      = '#27344c',
+   overlay0      = '#324055',
+   overlay1      = '#3d4c64',
+   overlay2      = '#4b5a73',
+   text          = '#dce7ff',
+   subtext1      = '#b6c3dd',
+   subtext0      = '#8f9dbd',
+   accent_blue   = '#7aa2f7',
+   accent_cyan   = '#7fd4ff',
+   accent_mint   = '#7de2a7',
+   accent_gold   = '#f7d770',
+   accent_peach  = '#f8a66c',
+   accent_rose   = '#f38fbf',
+   accent_violet = '#c099ff',
 }
 
 local colorscheme = {
-   foreground = mocha.text,
-   background = mocha.base,
-   cursor_bg = mocha.rosewater,
-   cursor_border = mocha.rosewater,
-   cursor_fg = mocha.crust,
-   selection_bg = mocha.surface2,
-   selection_fg = mocha.text,
+   foreground = aurora.text,
+   background = aurora.base,
+   cursor_bg = aurora.accent_cyan,
+   cursor_border = aurora.accent_cyan,
+   cursor_fg = aurora.crust,
+   selection_bg = aurora.surface2,
+   selection_fg = aurora.text,
    ansi = {
-      '#0C0C0C', -- black
-      '#C50F1F', -- red
-      '#13A10E', -- green
-      '#C19C00', -- yellow
-      '#0037DA', -- blue
-      '#881798', -- magenta/purple
-      '#3A96DD', -- cyan
-      '#CCCCCC', -- white
+      '#1a2333',
+      '#f87070',
+      '#5fd89a',
+      '#fbd567',
+      '#7aa2f7',
+      '#c099ff',
+      '#7cd1ff',
+      '#dce7ff',
    },
    brights = {
-      '#767676', -- black
-      '#E74856', -- red
-      '#16C60C', -- green
-      '#F9F1A5', -- yellow
-      '#3B78FF', -- blue
-      '#B4009E', -- magenta/purple
-      '#61D6D6', -- cyan
-      '#F2F2F2', -- white
+      '#263046',
+      '#ff9f9a',
+      '#7feeb3',
+      '#ffe08a',
+      '#96b8ff',
+      '#d7b2ff',
+      '#9ae4ff',
+      '#f2f6ff',
    },
    tab_bar = {
-      background = 'rgba(0, 0, 0, 0.4)',
+      background = 'rgba(8, 14, 23, 0.55)',
       active_tab = {
-         bg_color = mocha.surface2,
-         fg_color = mocha.text,
+         bg_color = aurora.surface2,
+         fg_color = aurora.text,
+         intensity = 'Bold',
       },
       inactive_tab = {
-         bg_color = mocha.surface0,
-         fg_color = mocha.subtext1,
+         bg_color = aurora.surface0,
+         fg_color = aurora.subtext0,
       },
       inactive_tab_hover = {
-         bg_color = mocha.surface0,
-         fg_color = mocha.text,
+         bg_color = aurora.surface1,
+         fg_color = aurora.text,
       },
       new_tab = {
-         bg_color = mocha.base,
-         fg_color = mocha.text,
+         bg_color = aurora.mantle,
+         fg_color = aurora.subtext0,
       },
       new_tab_hover = {
-         bg_color = mocha.mantle,
-         fg_color = mocha.text,
+         bg_color = aurora.surface2,
+         fg_color = aurora.text,
          italic = true,
       },
    },
-   visual_bell = mocha.red,
+   visual_bell = aurora.accent_rose,
    indexed = {
-      [16] = mocha.peach,
-      [17] = mocha.rosewater,
+      [16] = aurora.accent_peach,
+      [17] = aurora.accent_violet,
    },
-   scrollbar_thumb = mocha.surface2,
-   split = mocha.overlay0,
-   compose_cursor = mocha.flamingo,
+   scrollbar_thumb = 'rgba(122, 162, 247, 0.2)',
+   split = aurora.overlay0,
+   compose_cursor = aurora.accent_gold,
 }
 
-return colorscheme
+local meta = {
+   accent = aurora.accent_blue,
+   accent_soft = aurora.accent_cyan,
+   accent_warm = aurora.accent_peach,
+   accent_gold = aurora.accent_gold,
+   accent_pink = aurora.accent_rose,
+   surface = aurora.surface0,
+   surface_hover = aurora.surface1,
+   glass = 'rgba(8, 14, 23, 0.45)',
+   glass_heavy = 'rgba(8, 14, 23, 0.65)',
+   text = aurora.text,
+   text_dim = aurora.subtext0,
+}
+
+return {
+   palette = colorscheme,
+   meta = meta,
+}
