@@ -8,12 +8,12 @@ local fallback_fonts = {
    'Segoe UI Emoji',
 }
 
-local font_size = platform.is_mac and 12.5 or 10.5
+local font_size = platform.is_mac and 13.5 or 11.5
 
 return {
    font = wezterm.font_with_fallback(fallback_fonts),
    font_size = font_size,
-   line_height = 1.05,
+   line_height = 0.98,
    harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1', 'ss01=1' },
    font_rules = {
       {

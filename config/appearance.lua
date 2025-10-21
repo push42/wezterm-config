@@ -1,9 +1,20 @@
+local wezterm = require('wezterm')
 local gpu_adapters = require('utils.gpu-adapter')
 local backdrops = require('utils.backdrops')
 local color_spec = require('colors.custom')
 local colors = color_spec.palette
 
 local meta = color_spec.meta or {}
+
+local hour = tonumber(os.date('%H')) or 0
+local is_after_hours = hour >= 21 or hour < 7
+local window_opacity = is_after_hours and 0.9 or 0.94
+local text_opacity = is_after_hours and 0.92 or 0.94
+local after_hours_note = is_after_hours and ' (after-hours blend)' or ''
+
+if is_after_hours then
+   wezterm.log_info('Applying after-hours appearance adjustments' .. after_hours_note)
+end
 
 return {
    max_fps = 120,
@@ -22,7 +33,7 @@ return {
    -- color scheme
    colors = colors,
 
-   -- background: pass in `true` if you want wezterm to start with focus mode on (no bg images)
+   -- background: keep imagery but soften glass at night
    background = backdrops:initial_options(false),
 
    -- scrollbar
@@ -55,8 +66,8 @@ return {
       active_titlebar_bg = meta.glass_heavy or 'rgba(8, 14, 23, 0.65)',
       inactive_titlebar_bg = meta.glass or 'rgba(8, 14, 23, 0.45)',
    },
-   window_background_opacity = 0.92,
-   text_background_opacity = 0.92,
+   window_background_opacity = window_opacity,
+   text_background_opacity = text_opacity,
    win32_system_backdrop = 'Acrylic',
    inactive_pane_hsb = {
       saturation = 0.85,
