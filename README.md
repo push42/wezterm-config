@@ -2,7 +2,7 @@
 
 Tailored WezTerm experience for the Push42 operations stack. This build layers neon-glass visuals, mode-aware prompts, telemetry-driven Fastfetch panels, and multi-domain launchers so Windows, WSL, and remote sessions feel unified.
 
-![Workspace preview](Screenshot 2025-10-21 065726.png)
+![Workspace preview](preview.png)
 
 ---
 
