@@ -1,8 +1,8 @@
 <h2 align="center">My WezTerm Config</h2>
 
 <p align="center">
-  <a href="https://github.com/KevinSilvester/wezterm-config/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/KevinSilvester/wezterm-config?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41">
+  <a href="https://github.com/push42/wezterm-config">
+    <img alt="Stargazers" src="Screenshot 2025-10-21 065726.png">
   </a>
   <a href="https://github.com/KevinSilvester/wezterm-config/issues">
     <img alt="Issues" src="https://img.shields.io/github/issues/KevinSilvester/wezterm-config?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41">
